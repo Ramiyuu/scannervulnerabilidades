@@ -1,0 +1,7 @@
+import sqlite3
+
+username = input("Digite seu nome: ")
+# Query insegura (concatenação direta)
+query = "SELECT * FROM users WHERE name = '" + username + "'"
+cursor = sqlite3.connect("db.sqlite").cursor()
+cursor.execute(query)
